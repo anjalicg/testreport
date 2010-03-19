@@ -9,12 +9,17 @@ You can do the following here:-
 7. Download the test execution report.
 8. Option to include bug id and description (as submitted in bugzilla); the list of the bugs for each release can be seen in the statistics page.
 
-Enhancements that need to done:- 
+Enhancements that can be done:- 
 1. Facility to upload test environment diagrams.
 2. Ability to download the whole test case document.
 3. Integration with bugzilla.
 4. Option to include test steps.
 5. Automatically mailing the report to a mailing list at a specific time everyday of the execution.
+
+Note:- 
+A sample test report with dummy data for reference has been kept in the same path as this readme. File name SampleTestReport.xls
+
+*** END ***
 
 == Welcome to Rails
 
