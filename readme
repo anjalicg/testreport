@@ -1,3 +1,21 @@
+*** Welcome to test execution management and report generation tool ***
+You can do the following here:- 
+1. Add new test cases to a category( feature request).
+2. Upload a list of test cases and description from an excel sheet in a pre-defined format.
+3. Add new release entry for which test execution is being done.
+4. Select the feature list for which test cases will be executed in a release and create a report with the selected test cases.
+5. Update the test results online.
+6. Get the test execution statistics online.
+7. Download the test execution report.
+8. Option to include bug id and description (as submitted in bugzilla); the list of the bugs for each release can be seen in the statistics page.
+
+Enhancements that need to done:- 
+1. Facility to upload test environment diagrams.
+2. Ability to download the whole test case document.
+3. Integration with bugzilla.
+4. Option to include test steps.
+5. Automatically mailing the report to a mailing list at a specific time everyday of the execution.
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create 
