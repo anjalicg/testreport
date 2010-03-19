@@ -1,0 +1,10 @@
+<h3>Select profile and release</h3>
+<% form_tag :controller=>'release', :action=>'show_profile_new' do %>
+<% r=Array.new(0) %>
+		<% @release.reverse.each do |r1| %>
+		<% r.push(r1.serial)%>
+		<% end %>
+<p><%= select(:input, :release_serial, r) %></p>
+<p><%= select(:input, :profile, @profile) %></p>
+<%= submit_tag "Show test cases"%>
+<% end %>

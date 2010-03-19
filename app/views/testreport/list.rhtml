@@ -1,0 +1,7 @@
+<h3>Master test report with all releases and builds</h3>
+<table border="1"><tr><th>Test Case Id</th><th>Executed By</th><th>Deviations</th><th>Result</th><th>Deviations</th><th>Observations</th><th>Release</th></tr>
+<% @testrs.each do |t| -%>
+<% if t.testcase -%>
+<tr><td><%=t.testcase.testcase_id%></td> <td> <%= t.deviations %> </td> <td> <%= t.build.name %></td> <td> <%= t.result%></td><td> <%= t.deviations %></td><td> <%= t.observation %></td><td> <%= t.release.serial %></td><td> </tr>
+<% end -%>
+<% end %>

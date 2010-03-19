@@ -1,0 +1,10 @@
+<h1>Post new Release</h1>
+<% form_tag :action => 'new' do %>
+<p><label for="release_serial">Release No.</label><br/>
+<%= text_field 'release', 'serial' %><br/><small>"Release No" should be unique. Ideally in the format of "Release no.-StartDate-APPver-WLANver-Serial no."</small></p>
+<p><label for="release_doc">TestPlan Document name (version and cvs path)</label><br/>
+<%= text_field 'release', 'doc' %></p>
+<p><label for="release_start_date">Start Testing Date:</label><br/>
+<%= date_select('release', 'start_date') %></p>
+<%= submit_tag "Submit new Release Name" %>
+<% end %>

@@ -1,0 +1,24 @@
+<h3>Add new Status report for each test case</h3>
+<% form_tag :action => 'new' do%>
+<p><label for="testreport_release_id">Release:</label><br/>
+<%= collection_select(:testreport, :release_id, @releases, :id, :serial) %></p>
+<p><label for="testreport_build_id">Build:</label><br/>
+<%= collection_select(:testreport, :build_id, @build, :id, :name) %></p>
+<p><label for="testreport_testcase_id">ID:</label><br/>
+<%= collection_select(:testreport, :testcase_id, @testcases, :id, :testcase_id) %></p>
+
+<p><label for="testreport_executed_by">Executed By:</label><br/>
+<%= select(:testreport, :executed_by, @executer) %> </p>
+
+<p><label for="testreport_result">Result:</label><br/>
+<%= select(:testreport, :result, @result) %> </p>
+
+<p><label for="testreport_observation">Observation:</label><br/>
+<%= text_area 'testreport', 'observation',:rows=>3, :columns=>200 %></p>
+
+<p><label for="testreport_deviations">Deviation:</label><br/>
+<%= text_area 'testreport', 'deviations',:rows=>3, :columns=>200 %></p>
+
+
+<%= submit_tag "Submit Result" %>
+<% end %>

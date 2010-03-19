@@ -1,0 +1,19 @@
+<h3>Edit test report for the test case:- <%= @testreport.testcase.testcase_id%> for <%= :release_id %></h3>
+<% form_tag :action => 'update', :id=>@testreport, :release_id=> params[:release_id]do%>
+<p><label for="testreport_testcase_id">Details</label><br/>
+<%# collection_select(:testreport, :testcase_id, @testcases, :testcase_id, :testcase_id) %></p>
+
+<p><label for="testreport_executed_by">Executed By</label><br/>
+<%= select(:testreport, :executed_by, @executer) %> </p>
+
+<p><label for="testreport_result">Result</label><br/>
+<%= select(:testreport, :result, @result) %> </p>
+
+<p><label for="testreport_observation">Observation</label><br/>
+<%= text_area 'testreport', 'observation', :rows=>10, :columns=>200 %></p>
+
+<p><label for="testreport_deviations">Deviation</label><br/>
+<%= text_area 'testreport', 'deviations', :rows=>3, :columns=>200 %></p>
+
+<%= submit_tag "Submit Result" %>
+<% end %>

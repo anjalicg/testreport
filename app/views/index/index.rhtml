@@ -1,0 +1,27 @@
+<div id="welcome">
+<p>Welcome to <b>GainSpan India Pvt Ltd QA Status Reporting Tool</b></p>
+</div>
+<div id="about">
+<h2>About This tool</h2>
+<p>This is intended to be the QA one point reporting tool<br/> </p>
+</div>
+<div id="main-page-howto">
+<h2>How to Use this Tool for</h2>
+<ul>
+<li><strong>Test case Management</strong></li> 
+<p>Follow the link <%= link_to "Add new category", :controller=>'build', :action=>'new'%> to add new categories(e.g. TLS/MTS/ALL etc). These categories are mapped to the test cases and used to create the blank report for each release</p>
+<p>Follow the link <%= link_to "Show all categories", :controller=>'build', :action=>'list' %> to see the names of the categories available in the database</p>
+<p>->Follow the link <%= link_to "Add new testcase",:controller=>'testcase', :action=>'new' %> to add a new test case. Submit the test case ID, test description, category details as per the test plan document. </p>
+<p>If the category you are looking for is not present in the list, please add it in and come back to add the test case</p>
+<p>->Follow the link <%= link_to "View all saved test cases", :controller=>'testcase', :action=>'list' %> to see all the test cases saved in the system. For here, you can edit the already submitted test cases. </p>
+<li><strong>Release Management</strong></li>
+<p>->Follow the link <%= link_to "Add new release", :controller=>'release', :action=>'new'%> to add new release to the system.<br/> Note:<u>This release name should be unique.</u> New test reports will be generated based on the release name. Release name should be separate for intermediate releases</p>
+<p>->Follow the link <%= link_to "Show all release", :controller=>'release', :action=>'list' %> to see all the existing releases. You can follow each release hyperlink to see the report for that release. The count of executed, pending test cases can also be found here.</p>
+<p>->Follow the link <%= link_to "Create Fresh Report", :controller=>'testreport', :action=>'skele_rep' %> to create a fresh report for each release. Pick the relevant categories/binaries and release no. to generate the report. <br/>Note:-<u> This step CANNOT be undone (atleast without deleting each individual test cases selected, which can be laborious).</u></p>
+<p>-> Follow the link saying <u>Generate Excel Sheet</u> inside each release <%= link_to "Show all release", :controller=>'release', :action=>'list' %> to get the result in the excel sheet</p>
+<li><strong>Testplan Management</strong></li>
+<p>->Follow the link <%= link_to "Test Plan Error/Suggestions", :controller=>'testplan', :action=>'new' %> to report errors in the test plan document or suggest new test cases</p>
+<p>->Follow the link <%=link_to "List of all Saved Suggestion", :controller=>'testplan', :action=>'list' %> to see the list of all saved Suggestions </p>
+
+</ul>
+</div>

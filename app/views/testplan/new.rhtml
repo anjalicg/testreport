@@ -1,0 +1,14 @@
+<h3>Report error in testplan/ Suggest a new test case</h3>
+<% form_tag :action => 'new' do%>
+
+<p><label for="testplan_reported_by">Reported By:</label><br/>
+<%= select(:testplan, :reported_by, @reporter) %> </p>
+<p><label for="testplan_testcase_id">Existing test case ID/New:</label><br/>
+<%= select(:testplan, :testcase_id, @testcases) %> </p>
+<p><label for="testplan_description">Description:</label><br/>
+<%= text_area 'testplan', 'description', :rows=>10, :column=>200 %></p>
+<p><label for="testplan_build_id">Build Details:</label><br/>
+<%= collection_select(:testplan, :build_id, @builds, :id, :name) %></p>
+<%= submit_tag "Submit Suggestion" %>
+<% end %>
+

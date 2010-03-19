@@ -1,0 +1,22 @@
+<h3>Following test cases were added for the selected release <%= @release.serial%></h3>
+<table border="1"><tr><th>Sl. No.</th><th><%= link_to "Tester Profile" , :controller=>'release', :action=>'sort_by_profile', :id=>params[:id] %></th><th>Test Case Id</th><th>Test Case Description</th><th>Executed By</th><th>Deviations</th><th><%= link_to "Result", :controller=>'release', :action=>'sort', :id=>params[:id] %></th><th>Observations</th><th></th><th></th></tr>
+<% count = 1 %>
+<% @selected_testcase.each do |t| -%>
+<% if t.testcase -%>
+<tr><td><%= count %></td><td><%= t.testcase.profile %></td><td><%= link_to t.testcase.testcase_id, {:controller=>'testreport', :action=>'edit', :id=>t.id, :release_id=>@release.id} %>
+</td> <td><%= t.testcase.testdescription%></td> 
+<td><%# select(:testreport, :executed_by, @executer) %> <%= t.executed_by%></td>
+<td> <%= t.deviations %> </td> 
+<td> <%= t.result %></td>
+ <td> <%= t.observation %></td>
+ <td> <%= link_to "Delete", :controller=> 'release',:action=>'delete', :id=>t.id, :release_id=>t.release_id %></td> 
+<td><%= link_to "Save changes", :controller=>'testreport', :action=>'update', :id=>t.id, :release_id=>@release.id%></td></tr>
+<% count+=1 %>
+<% end %>
+
+<% end %>
+
+<p><%= link_to "Generate Excel Sheet", :controller=>'release',:action=>'listexcel',:id=>@release %></p>
+<p><%= link_to "Current Execution Status", :controller=>'release',:action=>'status',:release_id=>@release %></p>
+
+

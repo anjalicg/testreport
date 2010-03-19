@@ -1,0 +1,24 @@
+<h3> Result for All the releases </h3>
+<table border="1">
+<tr><th>Test Case</th>
+<% @releases.each  do |rel| %>
+<th><%= rel.serial %></th>
+<% end %>
+</tr>
+<% @res_set.each do |testcase_id, res| %>
+<tr>
+<td><%= testcase_id %> </td>
+<% res_ar= res.split("+").collect {|x| x.split("<->")}%>
+<%# res_ar %>
+<% @releases.each  do |rel| %>
+	<% if res_ar.flatten.index(rel.id.to_s) %>
+		<td>...FOUND...</td>
+		<% else %>
+		<td>Not Found</td>
+	    <% end %>
+<% end %>
+</tr>
+
+
+<% end %>
+</table>

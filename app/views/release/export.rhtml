@@ -1,0 +1,24 @@
+<div ><b style="background-color:yellow;">Release :- <%= @release.serial %> Test Plan Doc :- <%= @release.doc %></b></div>
+<div><b>Start Date of Test :-<%= @release.start_date%></b></div>
+<table>
+<span ><tr><th>Sl no.</th><th >Test Case Id</th><th>Test Case Description</th>
+<th>Executed By</th><th>Deviations</th><th> Result </th><th>Observations</th>
+</tr></span>
+<% count = 1 %>
+<% @selected_testcase.each do |t| -%>
+<tr>
+<td><%= count %></td>
+<td><%= t.testcase.testcase_id %></td>
+<td><%=  t.testcase.testdescription %></td>
+<td><%= t.executed_by %></td>
+<td><%= t.deviations %></td>
+<td><%= t.result %></td>
+<td><%= t.observation %></td>
+
+</tr>
+
+<% end %>
+
+
+
+

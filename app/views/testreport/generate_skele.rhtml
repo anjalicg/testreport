@@ -1,0 +1,9 @@
+<h3>Following test cases were added for the selected release</h3>
+<table border="1"><tr><th>Test Case Id</th><th>Executed By</th><th>Deviations</th><th>Result</th><th>Observations</th><th></th></tr>
+<% @selected_testcase.each do |t| %>
+<% if t.testcase %>
+<tr><td><%= t.testcase.testcase_id %></td> <td> <%= t.executed_by %> </td> <td> <%= t.build.name %></td> <td> <%= t.result%></td><td> <%= t.release.serial %></td></tr>
+<% end %>
+<% end %>
+
+

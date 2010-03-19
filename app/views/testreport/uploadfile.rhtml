@@ -1,0 +1,24 @@
+<h3>Testreport Upload</h3>
+<p>Upload a previous test report to the database.<br/> The test report should have the following columns in the following order:-</p>
+<p><strong><i>Sl.No , TestCase Id, Test Description, Build, Test Engineer, Deviations, Result, Observations</i></strong></p>
+<hr/>
+<p><strong>The following are acceptable Build IDs:-</strong></p>
+<div style="outline: green solid thin">
+<% @builds.each do |b|%>
+<% if b.name!="To Be Deleted" %>
+<p><i><%= b.name %></i></p>
+<% end %>
+<% end %>
+</div>
+
+<% form_tag ({:action => 'uploadFile2server'}, 
+                        :multipart => true) do %>
+<p style="margin-top:10px"><label for="upload_rfile">Select File</label> : 
+<%= file_field 'upload', 'datarfile' %></p>
+<p><label for="upload_row">First Data Row number:</label> : 
+<%= text_field 'upload', 'row' %></p>
+<p><label for="upload_release">Select Release Serial No.</label> : 
+<%= collection_select('upload', 'release_id', @release, :id, :serial) %></p>
+<%= submit_tag "Upload" %>
+<p><small>Please Wait After pressing "Upload".... The Upload process will take a few seconds.<br/> You will be automatically redirected to a status page once the upload is finished</small></p>
+<% end %>

@@ -1,0 +1,9 @@
+<h3><%= @testreport.testcase_id %> Details</h3>
+<p>Test Case ID: <%= @testreport.testcase.testcase_id %></p>
+<p>Release: <%= @testreport.release.serial %></p>
+<p>Build: <%= @testreport.build.name %></p>
+<p>Tester:<%=  @testreport.executed_by %> </p>
+<p>Result: <%= @testreport.result %></p>
+<p>Observation: <%= @testreport.observation %></p>
+<p>Deviation: <%= @testreport.deviations %></p>
+<p>Updated At: <%= @testreport.updated_at %></p>

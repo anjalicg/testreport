@@ -1,0 +1,15 @@
+<h3>All Stored builds:- </h3>
+<ul>
+<% @builds.each do |b| %>
+<li> <%= b.id %>:<%= b.name %></li>
+<% end %>
+</ul>
+<hr/>
+<% count =1 %>
+<h3>Number of testcases for each build:- </h3>
+<table border="1" width=100%>
+<tr><th>Sl. No.</th><th>Build Name</th><th>Number of Testcases</th></tr>
+<% @t.each do |k,e| %>
+<tr><td><%= count %></td><td><%= k%></td><td><%= e%></td></tr>
+<% count+=1 %>
+<% end %>

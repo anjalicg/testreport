@@ -1,0 +1,31 @@
+<h3>Save Status for Multiple Test cases for the release <%= @release.serial%></h3>
+<p><small>Select the Required test case by the checkboxes and the various result parameters and Click "Multi Save" </small></p>
+<table border="1"><tr><th>Sl. No.</th><th>Test Case Id</th><th>Test Case Description</th></tr>
+<% form_tag :controller=> 'testreport',:action=>'multisaveput', :release_id=>@release.id do %>
+	<% @selected_testcase.each do |t| -%>
+		<% if t.testcase -%>
+			<% cid = t.id %>
+			<tr><td><%= check_box_tag cid %></td><td><%= t.testcase.testcase_id %><td><%= t.testcase.testdescription %></td></tr>			
+		<% end %>
+	<% end %>
+	
+
+<p><label for="multi_executerd_by">Executed By</label><br/>
+<p><%= select(:multi, :executed_by, @executer) %></p>
+<p><label for="multi_deviations">Deviations</label><br/>
+<%= text_area(:multi, :deviations, :rows=>3, :columns=>3) %></p>
+<p><label for="multi_result">Result</label><br/>
+<%= select(:multi, :result, @result) %></p>
+<p><label for="multi_observation">Observation</label><br/>
+<%= text_area(:multi, :observation, :rows=>3, :columns=>3, :value=>"[BugId]:Bug Summary") %></p>
+
+<p><%= submit_tag "Multi Save"%></p>	
+<% end %>
+</table>
+
+
+<p><%# link_to "Generate Excel Sheet", :controller=>'release',:action=>'listexcel',:id=>@release %></p>
+<p><%= link_to "Current Execution Status", :controller=>'release',:action=>'status',:release_id=>@release %></p>
+<p><%= link_to "Send TestReport in Mail", :controller=>'emailer',:action=>'index',:release_id=>@release %></p>
+
+

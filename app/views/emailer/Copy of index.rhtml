@@ -1,0 +1,27 @@
+<h1>Send Emailing</h1>
+<% form_tag :action => 'sendmail', :releaseid=>@release.id do %>
+<p><label for="email_recipient">Send To(<small>Multiple "To" Addresses can be separated by commas</small>)</label>: <br/>
+<%= text_field 'email', 'recipient',:size=>63, :value=>'anjalicg@gainspan.com, chethana.kamath@gainspan.com' %></p>
+
+<p><label for="email_docname">Test Report File name:(<small>Eg. General-TestReport. So the actual file name will be in "General-TestReport-ReleaseName" format</small>)</label>: <br/>
+<%= text_field 'email', 'docname'%></p>
+
+
+<p><label for="email_subject">Subject</label>:
+<%= text_field 'email', 'subject' ,:value=>"Test Execution Report for the release #{@release.serial} #{Time.now.strftime( "on %d/%m/%y at %I:%M%p")} ", :maxlength=>65 %></p>
+
+
+<% text= "Hi, \n Please find the test report for the release. \n\n Statistics:- \n PASS:-#{@status["pass"]} \n FAIL:-#{@status["fail"]} \n NA:-#{@status["na"]} \n Block:- #{@status["block"]}\n In Progress:- #{@status["inprogress"]}\n Pending:-#{@status["pending"]}\n Total:-#{@status["total"]}  \n\n Thanks and Regards, \n" %>
+<% bug= ""%>
+<% @bugs.each do |v| %>
+<% bug+= v %>
+<% end %>
+<p><label for="email_message">Message</label><br/>
+<%= text_area 'email', 'message',:value=> text %></p>
+
+<p><label for="email_bugs">Bug List: Please trim this list to avoid duplication</label><br/>
+<%= text_area 'email', 'bug',:value=> bug %></p>
+
+<%= submit_tag "Send" %>
+<% end %>
+

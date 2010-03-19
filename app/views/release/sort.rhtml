@@ -1,0 +1,41 @@
+<h3>Following test cases were added for the selected release <%= @release.serial%></h3>
+<table border="1"><tr><th>Select</th><th><%= link_to "Tester Profile" , :controller=>'release', :action=>'sort_by_profile', :id=>params[:id] %></th><th>Test Case Id</th><th>Test Case Description</th><th>Executed By</th><th>Deviations</th><th><%= link_to "Result", :controller=>'release', :action=>'show', :id=>params[:id] %></th><th>Observations</th><th></th></tr>
+<% count = 1 %>
+<% @selected_testcase.each do |t| -%>
+<% if t.testcase -%>
+<% form_tag :controller=> 'testreport',:action=>'update', :id=>t.id, :release_id=>@release.id, :type=>'sort' do %>
+<tr><td><%= count %></td><td><%= t.testcase.profile%></td><td><%= link_to t.testcase.testcase_id, :controller=>'testreport', :action=>'edit', :id=>t.id %></td><td><%= t.testcase.testdescription %></td>
+<% unless t.executed_by %>
+<td><%= select(:testreport, :executed_by, @executer) %></td>
+<% else %>
+<td><%= t.executed_by %></td>
+<% end %>
+<% unless t.deviations %>
+<td><%= text_area(:testreport, :deviations, :rows=>3, :columns=>3) %></td>
+<% else %>
+<td><%= t.deviations %></td>
+<% end %>
+<% unless t.result %>
+<td><%= select(:testreport, :result, @result) %></td>
+<% else %>
+<td><%= t.result %></td>
+<% end %>
+<% unless t.observation %>
+<td><%= text_area(:testreport, :observation, :rows=>3, :columns=>3) %></td>
+<% else %>
+<td><%= t.observation %></td>
+<% end %>
+<% unless t.result %>
+<td><%= submit_tag "Save"%></td>
+<% end %>
+</tr>
+
+<% end %>
+<% count+=1 %>
+<% end %>
+
+<% end %>
+<p><%# link_to "Generate Excel Sheet", :controller=>'release',:action=>'listexcel',:id=>@release %></p>
+<p><%= link_to "Current Execution Status", :controller=>'release',:action=>'status',:release_id=>@release %></p>
+<p><%= link_to "Send TestReport in Mail", :controller=>'emailer',:action=>'index',:release_id=>@release %></p>
+<p><%= link_to "Save Multiple Testreports", :controller=>'release',:action=>'multisaveget',:id=>@release %></p>

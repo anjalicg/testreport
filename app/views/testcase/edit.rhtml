@@ -1,0 +1,13 @@
+<h3>Edit testcase: <%= @testcase_id %></h3>
+<% form_tag :action => 'edit' do %>
+<p><label for="testcase_testcase_id">ID</label><br/>
+<%= text_field 'testcase', 'testcase_id' %></p>
+<p><label for="testcase_testdescription">Description</label><br/>
+<%= text_field 'testcase', 'testdescription' %></p>
+<p><label for="testcase_build_id">Build</label><br/>
+<%= collection_select(:testcase, :build_id, @builds, :id, :name) %></p>
+
+<p><label for="testcase_profile">Tester Profile:</label><br/>
+<%= select(:testcase, :profile, @profiles) %> </p>
+<%= submit_tag "Submit Changes" %>
+<% end %>

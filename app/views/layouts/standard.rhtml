@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;.
+charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>QA Status Reporting</title>
+<%= stylesheet_link_tag "style" %>
+</head>
+<body id="test-report">
+<div id="container">
+<div id="header">
+<h1>Gainspan India Pvt. Ltd. QA Status Reporting Tool </h1>
+</div>
+<div id="sidebar">
+<h2>What you can do here..</h2>
+<p><strong>TESTCASE Management</strong>
+<%= link_to "Add new testcase", {:controller=>'testcase', :action=>'new'} %>
+ <%= link_to "View all saved test cases", {:controller=>'testcase', :action=>'list'} %>
+<%= link_to "Add new category", {:controller=>'build',:action=>'new'}%>
+<%= link_to "Show all categories", :controller=>'build', :action=>'list' %></p>
+<%= link_to "Upload Testcases from excel", :controller=>'testcase', :action=>'uploadfile' %>
+<%= link_to "Upload Previous TestReports from excel", :controller=>'testreport', :action=>'uploadfile' %>
+<p><strong>RELEASE Management</strong>
+<%= link_to "Add new release", {:controller=>'release',:action=>'new'}%>
+<%= link_to "Create Blank report", {:controller=>'testreport',:action=>'skele_rep'}%>
+<%= link_to "Download SAVED Reports", {:controller=>'testreport',:action=>'filedownload'}%>
+<%= link_to "Show All Reports/Release", {:controller=>'release',:action=>'list'} %></p>
+<p><strong>TESTPLAN management</strong>
+<%=link_to "List of all Saved Suggestion", :controller=>'testplan', :action=>'list' %>
+<%= link_to "Add new Suggestion", :controller=>'testplan', :action=>'new'%></p>
+<p><strong>Home</strong>
+<%= link_to "Back to Home Page", :controller=>'index', :action=>'index' %></p>
+</div>
+<div id="content">
+<% if flash[:notice] %>
+      <div id="status"><%= flash[:notice] %></div>
+      <% elsif flash[:error] %>
+      <div id="status"><%= flash[:error] %></div>
+      <div id="error"><%= error_messages_for :testreport %></div>
+    <% end %>
+<%= yield -%>
+</div>
+</body>
+</html>

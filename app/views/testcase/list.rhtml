@@ -1,0 +1,8 @@
+<h3>All Saved Test Cases </h3>
+<table border="1"><tr><th>Sl No.</th><th>Tester profile</th><th>Test Case Id</th><th>Description</th><th>Build</th></tr>
+<% count =1 %>
+<% @testcases.each do |t| %>
+<tr><td><%= count%></td> <td><%= t.profile %></td> <td><%= link_to t.testcase_id, :action=>'show', :id=>t.id %></td> <td> <%= t.testdescription %> </td><td><%=t.build.name %></td> <td> <%= link_to "Edit", :action=>'edit', :id=>t.id %></td></tr>
+<% count+=1 %>
+<% end %>
+</table>

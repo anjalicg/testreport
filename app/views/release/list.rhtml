@@ -1,0 +1,8 @@
+<h3>All Stored Releases</h3>
+<table border="1" width=100%>
+<% @releases.reverse.each do |r| %>
+<tr><td>Serial:- <%= link_to r.serial, {:id=>r.id, :action=>'show'} %></td><td>Starts On:- <b> <%= r.start_date %></b><td><td><%= link_to "Execution Status Till Now", :controller=>'release', :action=>'status', :release_id=>r.id %></td></tr>
+<% end %>
+</table>
+
+<p><%= link_to "Select Report by Release and Profile", :controller=>'release', :action=>'select_profile'%></p>

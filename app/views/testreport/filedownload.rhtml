@@ -1,0 +1,7 @@
+<h3>Following files are available for download:</h3>
+<tr><table> <th>File name</th><th>Created At</th></tr>
+<% @files.sort %>
+<% @timearray.each do |v| %>
+<tr><td><%= link_to @files.fetch(v),:action=>'filedownload', :method=>'post',:name=>@files.fetch(v) %></td> <td><%= Time.at(v)%></td></tr>
+<% end %>
+</table>

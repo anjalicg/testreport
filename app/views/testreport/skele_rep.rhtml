@@ -1,0 +1,14 @@
+<h3>Select BUILD & RELEASE for generating the Fresh Report</h3>
+<% form_tag :action=> 'generate_skele'do %>
+<h4>Select Binary/Build</h4>
+<table><tr><th>Name</th><th>Select</th></tr>
+<% @builds.each do |b| %>
+<tr><td><label for="builds"><%= b.name %>:</label> </td> <td><%= check_box (b.id, b.name)%></td></tr>
+<% end %>
+</table>
+<h4><label for="testreport_release_id">Release</label> :
+<%= collection_select(:testreport, :release_id, @releases.reverse, :id, :serial) %></h4>
+<br/>
+<%= submit_tag "Create Fresh Report" %>
+
+<% end %>

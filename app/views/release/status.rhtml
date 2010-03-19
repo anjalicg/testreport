@@ -1,0 +1,31 @@
+<h3>Execution status for Release <%= @release.serial %> </h3>
+<table border="1" width=100%>
+<tr><td><strong>PASSED:</strong></td><td><%= @status["pass"]%> </td></tr>
+<tr><td><strong>FAILED:</strong></td><td><%= @status["fail"]%></td> </tr>
+<tr><td><strong>NA:</strong></td><td><%= @status["na"]%> </td></tr>
+<tr><td><strong>In Progress:</strong></td><td><%= @status["inprogress"]%></td> </tr>
+<tr><td><strong>BLOCK:</strong></td><td><%= @status["block"]%> </td></tr>
+<tr><td><strong>Can Not Run:</strong></td><td><%= @status["cantrun"]%> </td></tr>
+<tr><td><strong>Pending:</strong></td><td><%= @status["pending"]%> </td></tr>
+<tr><td><strong>TOTAL:</strong></td><td><%= @status["total"]%> </td></tr>
+</table>
+
+<h3>Testcase count by profiles:-</h3>
+<table border="1" width=100%>
+<tr><th>Profile</th><th>Total</th><th>Pending</th></tr>
+<% @countx.each do |c,v|%>
+<tr><td><%= c%></td><td><%= v %></td><td><%= @pcountx[c]%></td></tr>
+<% end %>
+
+</table>
+<h3>Bugs present  in the current release:- </h3>
+<% count = 1 %>
+<% @buglist.each do |b|%>
+<% if b.observation.to_s.length>0 and b.observation != "[BugId]:Bug Summary"%>
+<% if b.result=="FAIL"%>
+<p><%= count %>: <%= b.observation%></p>
+<% count += 1 %>
+<% end %>
+<% end %>
+<% end %>
+<p><%= link_to "Select Report by Release and Profile", :controller=>'release', :action=>'select_profile'%></p>

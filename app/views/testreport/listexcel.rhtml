@@ -1,0 +1,9 @@
+<table border="1"><tr><th>Sl. No.</th><th>Test Case Id</th><th>Test Description</th><th>Executed By</th><th>Deviations</th><th>Result</th><th>Observations</th><th></th></tr>
+<% count =1 %>
+<% @testrs.each do |t| %>
+<% if t.testcase -%>
+<tr><td><%= count %></td><td><%= t.testcase.testcase_id %></td> <td><%= t.testcase.testdescription%></td><td> <%= t.executed_by %> </td> <td> <%= t.deviations%></td> <td> <%= t.result%></td><td> <%= t.observation %></td><td></tr>
+<% count+=1 %>
+<% end %>
+<% end %>
+</table>

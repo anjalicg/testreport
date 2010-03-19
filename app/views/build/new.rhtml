@@ -1,0 +1,6 @@
+<h1>Post new Build</h1>
+<% form_tag :action => 'new' do %>
+<p><label for="build_name">Build Name</label><br/>
+<%= text_field 'build', 'name' %></p>
+<%= submit_tag "Submit new Build Name" %>
+<% end %>

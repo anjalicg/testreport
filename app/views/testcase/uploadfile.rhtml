@@ -1,0 +1,20 @@
+<h3>File Upload</h3>
+<p>Upload an excel sheet to save test cases in the database</p>
+<p>The file should have the following columns  <b>in the given ORDER-> <br/> Sl No. , Test case ID, Test Case profile, Description, Build ID.</b> </p>
+<p>The following are acceptable Build IDs</p>
+<div style="outline: green solid thin">
+<% @builds.each do |b|%>
+<% if b.name!="To Be Deleted" %>
+<p><i><%= b.name %></i></p>
+<% end %>
+<% end %>
+</div>
+<% form_tag ({:action => 'uploadFile2server'}, 
+                        :multipart => true) do %>
+<p style="margin-top:10px"><label for="upload_file">Select File</label> : 
+<%= file_field 'upload', 'datafile' %></p>
+<p><label for="upload_row">First Data Row number:</label> : 
+<%= text_field 'upload', 'row' %></p>
+<%= submit_tag "Upload" %>
+<p><small>Please Wait After pressing "Upload".... The Upload process will take a few seconds.<br/> You will be automatically redirected to a status page once the upload is finished</small></p>
+<% end %>

@@ -1,0 +1,99 @@
+* {
+margin: 0;
+padding:0;
+}
+body {
+font-family: Helvetica, Geneva, Arial, sans-serif;
+font-size: small;
+font-color: #000;
+#background-color: #FFFAFA;
+background-color: #F8F8F8 ;
+text-align: center;
+margin-left: 50px;
+#margin-right: 200px;
+width: 250px;
+}
+a:active, a:visited {
+color:#C71585;
+#color: violet;
+}
+
+a:hover {
+color: #F70000;
+}
+a {
+	background-color:#F5DEB3;
+	#background-color: #FFFFCC;
+	color: 	#0000FF;
+	
+	}
+input { margin-bottom: 5px;}
+p { line-height: 150%; }
+div#container {
+width: 760px;
+margin: 0 auto;
+}
+div#header {
+text-align: center;
+padding-bottom: 15px;
+}
+div#content {
+margin: 0 auto;
+text-align: left;
+
+
+}
+div#content h3 {
+margin-top: 15px;
+}
+
+div#sidebar {
+margin-top: 15px;
+outline: green solid thin;
+margin-bottom: 15px;
+text-align: left;
+}
+div#error {
+margin-top: 15px;
+font-size: small;
+outline: red solid thin;
+color: blue;
+margin-bottom: 15px;
+margin-left: 15px;
+
+}
+div#main-page-howto {
+	outline: green solid thin;
+	margin-top: 15px;
+	margin-left: 15px;
+	}
+div#about {
+	outline: green solid thin;
+	margin-top: 15px;
+	
+	}
+div#welcome {
+	font-size: large;
+	outline: green solid thin;
+	}
+div#status {
+	font-size: large;
+	outline: red solid thin;
+	color: blue;
+	}
+small {
+	color: red;
+	}
+span#cell {
+	border-width: 1px;
+	border-style: solid;
+	border-color: red;
+	padding-left: 3px;
+	padding-right: 3px;
+	
+	}
+div#row {
+	border-width: 1px;
+	border-style: solid;
+	border-color: red;
+	}
