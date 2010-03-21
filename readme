@@ -15,6 +15,7 @@ Enhancements that can be done:-
 3. Integration with bugzilla.
 4. Option to include test steps.
 5. Automatically mailing the report to a mailing list at a specific time everyday of the execution.
+6. Add the tester details in a different model and implement new controller for it. This was hardcoded for my team.
 
 Note:- 
 A sample test report with dummy data for reference has been kept in the same path as this readme. File name SampleTestReport.xls
