@@ -36,37 +36,310 @@
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <p>*** Welcome to test execution management and report generation tool ***
+You can do the following here:- 
+1. Add new test cases to a category( feature request).
+2. Upload a list of test cases and description from an excel sheet in a pre-defined format.
+3. Add new release entry for which test execution is being done.
+4. Select the feature list for which test cases will be executed in a release and create a report with the selected test cases.
+5. Update the test results online.
+6. Get the test execution statistics online.
+7. Download the test execution report.
+8. Option to include bug id and description (as submitted in bugzilla); the list of the bugs for each release can be seen in the statistics page.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Enhancements that can be done:- 
+1. Facility to upload test environment diagrams.
+2. Ability to download the whole test case document.
+3. Integration with bugzilla.
+4. Option to include test steps.
+5. Automatically mailing the report to a mailing list at a specific time everyday of the execution.
+6. Add the tester details in a different model and implement new controller for it. This was hardcoded for my team.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Note:- 
+A sample test report with dummy data for reference has been kept in the same path as this readme. File name SampleTestReport.xls</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>*** END ***</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>== Welcome to Rails</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Rails is a web-application framework that includes everything needed to create 
+database-backed web applications according to the Model-View-Control pattern. </p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>This pattern splits the view (also called the presentation) into "dumb" templates
+that are primarily responsible for inserting pre-built data in between HTML tags.
+The model contains the "smart" domain objects (such as Account, Product, Person,
+Post) that holds all the business logic and knows how to persist themselves to
+a database. The controller handles the incoming requests (such as Save New Account,
+Update Product, Show Post) by manipulating the model and directing data to the view.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>In Rails, the model is handled by what's called an object-relational mapping
+layer entitled Active Record. This layer allows you to present the data from
+database rows as objects and embellish these data objects with business logic
+methods. You can read more about Active Record in
+link:files/vendor/rails/activerecord/README.html.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>The controller and view are handled by the Action Pack, which handles both
+layers by its two parts: Action View and Action Controller. These two layers
+are bundled in a single package due to their heavy interdependence. This is
+unlike the relationship between the Active Record and Action Pack that is much
+more separate. Each of these packages can be used independently outside of
+Rails.  You can read more about Action Pack in
+link:files/vendor/rails/actionpack/README.html.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>== Getting Started</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<ol>
+<li>At the command prompt, start a new Rails application using the <tt>rails</tt> command
+and your application name. Ex: rails myapp</li>
+<li>Change directory into myapp and start the web server: <tt>script/server</tt> (run with --help for options)</li>
+<li>Go to http://localhost:3000/ and get "Welcome aboard: You're riding the Rails!"</li>
+<li>Follow the guidelines to start developing your application</li>
+</ol><p>== Web Servers</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>By default, Rails will try to use Mongrel if it's are installed when started with script/server, otherwise Rails will use WEBrick, the webserver that ships with Ruby. But you can also use Rails
+with a variety of other web servers.</p>
+
+<p>Mongrel is a Ruby-based webserver with a C component (which requires compilation) that is
+suitable for development and deployment of Rails applications. If you have Ruby Gems installed,
+getting up and running with mongrel is as easy as: <tt>gem install mongrel</tt>.
+More info at: <a href="http://mongrel.rubyforge.org">http://mongrel.rubyforge.org</a></p>
+
+<p>Say other Ruby web servers like Thin and Ebb or regular web servers like Apache or LiteSpeed or
+Lighttpd or IIS. The Ruby web servers are run through Rack and the latter can either be setup to use
+FCGI or proxy to a pack of Mongrels/Thin/Ebb servers.</p>
+
+<p>== Apache .htaccess example for FCGI/CGI</p>
+
+<h1>
+<a name="general-apache-options" class="anchor" href="#general-apache-options"><span class="octicon octicon-link"></span></a>General Apache options</h1>
+
+<p>AddHandler fastcgi-script .fcgi
+AddHandler cgi-script .cgi
+Options +FollowSymLinks +ExecCGI</p>
+
+<h1>
+<a name="if-you-dont-want-rails-to-look-in-certain-directories" class="anchor" href="#if-you-dont-want-rails-to-look-in-certain-directories"><span class="octicon octicon-link"></span></a>If you don't want Rails to look in certain directories,</h1>
+
+<h1>
+<a name="use-the-following-rewrite-rules-so-that-apache-wont-rewrite-certain-requests" class="anchor" href="#use-the-following-rewrite-rules-so-that-apache-wont-rewrite-certain-requests"><span class="octicon octicon-link"></span></a>use the following rewrite rules so that Apache won't rewrite certain requests</h1>
+
+<h1>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example:</h1>
+
+<h1>
+<a name="rewritecond-request_uri-notrails" class="anchor" href="#rewritecond-request_uri-notrails"><span class="octicon octicon-link"></span></a>RewriteCond %{REQUEST_URI} ^/notrails.*</h1>
+
+<h1>
+<a name="rewriterule----l" class="anchor" href="#rewriterule----l"><span class="octicon octicon-link"></span></a>RewriteRule .* - [L]</h1>
+
+<h1>
+<a name="redirect-all-requests-not-available-on-the-filesystem-to-rails" class="anchor" href="#redirect-all-requests-not-available-on-the-filesystem-to-rails"><span class="octicon octicon-link"></span></a>Redirect all requests not available on the filesystem to Rails</h1>
+
+<h1>
+<a name="by-default-the-cgi-dispatcher-is-used-which-is-very-slow" class="anchor" href="#by-default-the-cgi-dispatcher-is-used-which-is-very-slow"><span class="octicon octicon-link"></span></a>By default the cgi dispatcher is used which is very slow</h1>
+
+<h1>
+<a name="for-better-performance-replace-the-dispatcher-with-the-fastcgi-one" class="anchor" href="#for-better-performance-replace-the-dispatcher-with-the-fastcgi-one"><span class="octicon octicon-link"></span></a>For better performance replace the dispatcher with the fastcgi one</h1>
+
+<h1>
+<a name="example-1" class="anchor" href="#example-1"><span class="octicon octicon-link"></span></a>Example:</h1>
+
+<h1>
+<a name="rewriterule--dispatchfcgi-qsal" class="anchor" href="#rewriterule--dispatchfcgi-qsal"><span class="octicon octicon-link"></span></a>RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]</h1>
+
+<p>RewriteEngine On</p>
+
+<h1>
+<a name="if-your-rails-application-is-accessed-via-an-alias-directive" class="anchor" href="#if-your-rails-application-is-accessed-via-an-alias-directive"><span class="octicon octicon-link"></span></a>If your Rails application is accessed via an Alias directive,</h1>
+
+<h1>
+<a name="then-you-must-also-set-the-rewritebase-in-this-htaccess-file" class="anchor" href="#then-you-must-also-set-the-rewritebase-in-this-htaccess-file"><span class="octicon octicon-link"></span></a>then you MUST also set the RewriteBase in this htaccess file.</h1>
+
+<h1>
+<a name="example-2" class="anchor" href="#example-2"><span class="octicon octicon-link"></span></a>Example:</h1>
+
+<h1>
+<a name="alias-myrailsapp-pathtomyrailsapppublic" class="anchor" href="#alias-myrailsapp-pathtomyrailsapppublic"><span class="octicon octicon-link"></span></a>Alias /myrailsapp /path/to/myrailsapp/public</h1>
+
+<h1>
+<a name="rewritebase-myrailsapp" class="anchor" href="#rewritebase-myrailsapp"><span class="octicon octicon-link"></span></a>RewriteBase /myrailsapp</h1>
+
+<p>RewriteRule ^$ index.html [QSA]
+RewriteRule ^([^.]+)$ $1.html [QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ dispatch.cgi [QSA,L]</p>
+
+<h1>
+<a name="in-case-rails-experiences-terminal-errors" class="anchor" href="#in-case-rails-experiences-terminal-errors"><span class="octicon octicon-link"></span></a>In case Rails experiences terminal errors</h1>
+
+<h1>
+<a name="instead-of-displaying-this-message-you-can-supply-a-file-here-which-will-be-rendered-instead" class="anchor" href="#instead-of-displaying-this-message-you-can-supply-a-file-here-which-will-be-rendered-instead"><span class="octicon octicon-link"></span></a>Instead of displaying this message you can supply a file here which will be rendered instead</h1>
+
+<h1>
+<a name="example-3" class="anchor" href="#example-3"><span class="octicon octicon-link"></span></a>Example:</h1>
+
+<h1>
+<a name="errordocument-500-500html" class="anchor" href="#errordocument-500-500html"><span class="octicon octicon-link"></span></a>ErrorDocument 500 /500.html</h1>
+
+<p>ErrorDocument 500 "</p><h2>
+<a name="application-error" class="anchor" href="#application-error"><span class="octicon octicon-link"></span></a>Application error</h2>Rails application failed to start properly"
+
+<p>== Debugging Rails</p>
+
+<p>Sometimes your application goes wrong.  Fortunately there are a lot of tools that
+will help you debug it and get it back on the rails.</p>
+
+<p>First area to check is the application log files.  Have "tail -f" commands running
+on the server.log and development.log. Rails will automatically display debugging
+and runtime information to these files. Debugging info will also be shown in the
+browser on requests from 127.0.0.1.</p>
+
+<p>You can also log your own messages directly into the log file from your code using
+the Ruby logger class from inside your controllers. Example:</p>
+
+<p>class WeblogController &lt; ActionController::Base
+    def destroy
+      <a href="https://github.com/weblog" class="user-mention">@weblog</a> = Weblog.find(params[:id])
+      @weblog.destroy
+      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
+    end
+  end</p>
+
+<p>The result will be a message in your log file along the lines of:</p>
+
+<p>Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1</p>
+
+<p>More information on how to use the logger is at <a href="http://www.ruby-doc.org/core/">http://www.ruby-doc.org/core/</a></p>
+
+<p>Also, Ruby documentation can be found at <a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a> including:</p>
+
+<ul>
+<li>The Learning Ruby (Pickaxe) Book: <a href="http://www.ruby-doc.org/docs/ProgrammingRuby/">http://www.ruby-doc.org/docs/ProgrammingRuby/</a>
+</li>
+<li>Learn to Program: <a href="http://pine.fm/LearnToProgram/">http://pine.fm/LearnToProgram/</a>  (a beginners guide)</li>
+</ul><p>These two online (and free) books will bring you up to speed on the Ruby language
+and also on programming in general.</p>
+
+<p>== Debugger</p>
+
+<p>Debugger support is available through the debugger command when you start your Mongrel or
+Webrick server with --debugger. This means that you can break out of execution at any point
+in the code, investigate and change the model, AND then resume execution! 
+You need to install ruby-debug to run the server in debugging mode. With gems, use 'gem install ruby-debug'
+Example:</p>
+
+<p>class WeblogController &lt; ActionController::Base
+    def index
+      @posts = Post.find(:all)
+      debugger
+    end
+  end</p>
+
+<p>So the controller will accept the action, run the first line, then present you
+with a IRB prompt in the server window. Here you can do things like:</p>
+
+<blockquote>
+<blockquote>
+<p>@posts.inspect
+  =&gt; "[#nil, \"body\"=&gt;nil, \"id\"=&gt;\"1\"}&gt;,
+       #\"Rails you know!\", \"body\"=&gt;\"Only ten..\", \"id\"=&gt;\"2\"}&gt;]"
+@posts.first.title = "hello from a debugger"
+  =&gt; "hello from a debugger"</p>
+</blockquote>
+</blockquote>
+
+<p>...and even better is that you can examine how your runtime objects actually work:</p>
+
+<blockquote>
+<blockquote>
+<p>f = @posts.first
+  =&gt; #nil, "body"=&gt;nil, "id"=&gt;"1"}&gt;
+f.
+  Display all 152 possibilities? (y or n)</p>
+</blockquote>
+</blockquote>
+
+<p>Finally, when you're ready to resume execution, you enter "cont"</p>
+
+<p>== Console</p>
+
+<p>You can interact with the domain model by starting the console through <tt>script/console</tt>.
+Here you'll have all parts of the application configured, just like it is when the
+application is running. You can inspect domain models, change values, and save to the
+database. Starting the script without arguments will launch it in the development environment.
+Passing an argument will specify a different environment, like <tt>script/console production</tt>.</p>
+
+<p>To reload your controllers and models after launching the console run <tt>reload!</tt></p>
+
+<p>== dbconsole</p>
+
+<p>You can go to the command line of your database directly through <tt>script/dbconsole</tt>.
+You would be connected to the database with the credentials defined in database.yml.
+Starting the script without arguments will connect you to the development database. Passing an
+argument will connect you to a different database, like <tt>script/dbconsole production</tt>.
+Currently works for mysql, postgresql and sqlite.</p>
+
+<p>== Description of Contents</p>
+
+<p>app
+  Holds all the code that's specific to this particular application.</p>
+
+<p>app/controllers
+  Holds controllers that should be named like weblogs_controller.rb for
+  automated URL mapping. All controllers should descend from ApplicationController
+  which itself descends from ActionController::Base.</p>
+
+<p>app/models
+  Holds models that should be named like post.rb.
+  Most models will descend from ActiveRecord::Base.</p>
+
+<p>app/views
+  Holds the template files for the view that should be named like
+  weblogs/index.html.erb for the WeblogsController#index action. All views use eRuby
+  syntax.</p>
+
+<p>app/views/layouts
+  Holds the template files for layouts to be used with views. This models the common
+  header/footer method of wrapping views. In your views, define a layout using the
+  <tt>layout :default</tt> and create a file named default.html.erb. Inside default.html.erb,
+  call &lt;% yield %&gt; to render the view using this layout.</p>
+
+<p>app/helpers
+  Holds view helpers that should be named like weblogs_helper.rb. These are generated
+  for you automatically when using script/generate for controllers. Helpers can be used to
+  wrap functionality for your views into methods.</p>
+
+<p>config
+  Configuration files for the Rails environment, the routing map, the database, and other dependencies.</p>
+
+<p>db
+  Contains the database schema in schema.rb.  db/migrate contains all
+  the sequence of Migrations for your schema.</p>
+
+<p>doc
+  This directory is where your application documentation will be stored when generated
+  using <tt>rake doc:app</tt></p>
+
+<p>lib
+  Application specific libraries. Basically, any kind of custom code that doesn't
+  belong under controllers, models, or helpers. This directory is in the load path.</p>
+
+<p>public
+  The directory available for the web server. Contains subdirectories for images, stylesheets,
+  and javascripts. Also contains the dispatchers and the default HTML files. This should be
+  set as the DOCUMENT_ROOT of your web server.</p>
+
+<p>script
+  Helper scripts for automation and generation.</p>
+
+<p>test
+  Unit and functional tests along with fixtures. When using the script/generate scripts, template
+  test files will be generated for you and placed in this directory.</p>
+
+<p>vendor
+  External libraries that the application depends on. Also includes the plugins subdirectory.
+  If the app has frozen rails, those gems also go here, under vendor/rails/.
+  This directory is in the load path.</p>
         </article>
       </div>
     </div>
